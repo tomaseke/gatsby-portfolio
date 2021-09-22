@@ -1,29 +1,33 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import React from "react"
+import "../components/App.css"
+import HeroImage from "../components/HeroImage"
+import Header from "../components/Header"
+import Project from "../components/Project"
+import About from "../components/About"
+import projects from "../components/projects.js"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["auto", "webp", "avif"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
-  </Layout>
-)
+const IndexPage = () => {
+  return (
+    <>
+      <Header />
+      <div className="hero-image-container">
+        <HeroImage />
+      </div>
+      <div className="section" id="projects">
+        <h1 id="projects">PROJECTS</h1>
+        <hr />
+        <section className="projects-container">
+          <Project project={projects[0]} />
+          <Project project={projects[1]} />
+          <Project project={projects[2]} />
+          <Project project={projects[3]} />
+          <Project project={projects[4]} />
+          <Project project={projects[5]} />
+        </section>
+      </div>
+      <About />
+    </>
+  )
+}
 
 export default IndexPage

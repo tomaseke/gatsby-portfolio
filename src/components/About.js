@@ -1,11 +1,10 @@
-import React, { useState } from "react"
+import React from "react"
+import { useState } from "react"
+import CV from "../../public/CV.pdf"
 import { motion, AnimatePresence } from "framer-motion"
 
-const Header = () => {
+const About = () => {
   const [isContactOpen, setIsContactOpen] = useState(false)
-  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false)
-  let hamburgerColor, headerDisplay
-
   if (isContactOpen) {
     document.body.classList.add("active-modal")
     // document.getElementById("hamburger-menu").style.display = "none";
@@ -17,49 +16,45 @@ const Header = () => {
   ) {
     document.body.classList.remove("active-modal")
     // document.getElementById("hamburger-menu").style.display = "initial";
-    // REFACTOR THIS WITH REF
-  }
-
-  if (isHamburgerOpen && window.innerWidth <= 1085) {
-    hamburgerColor = { color: "white" }
-    headerDisplay = { display: "initial" }
-  }
-  if (!isHamburgerOpen && window.innerWidth <= 1085) {
-    hamburgerColor = { color: "black" }
-    headerDisplay = { display: "none" }
+    // REFACTOR THIS WITH REF HOOK
   }
 
   return (
-    <>
-      <div
-        id="hamburger-menu"
-        style={hamburgerColor}
-        onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}
-      >
-        ☰
-      </div>
-      <header id="header" style={headerDisplay}>
-        <ul>
-          <a href="#about" onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}>
-            <li className="hamburger-menu-border">About</li>
-          </a>
-          <a
-            href="#projects"
-            onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}
+    <div className="section about-section">
+      <h1 id="about">ABOUT ME</h1>
+      <hr id="about-hr" />
+      <section className="about-container">
+        <div className="p-container">
+          <p>
+            I'm a self-taught frontend developer. I have a proficient
+            understanding of HTML, CSS and Javascript and I love learning new
+            tools and technologies that improve my efficiency as a developer (as
+            one of my favorite quote says "To a man with hammer, everything
+            looks like a nail."). At the time of writing, I am improving my
+            knowledge of React and a little bit of Node and Express to better
+            understand the frontend-backend dynamic. I am also on my ongoing
+            quest to write short yet readable code.
+            <br />
+            <br />I believe in effective communication, honesty and
+            adaptability. I love to brainstorm possible ideas with others,
+            however I can also crack problems on my own. I like to travel, play
+            any kind of sport and create new things.
+          </p>
+        </div>
+        <div id="about-buttons-container">
+          <button
+            className="about-buttons button"
+            onClick={() => setIsContactOpen(!isContactOpen)}
           >
-            <li>Portfolio</li>
-          </a>
-          <a onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}>
-            <li
-              className="hamburger-menu-border hamburger-menu-border-bottom"
-              style={{ cursor: "pointer" }}
-              onClick={() => setIsContactOpen(!isContactOpen)}
-            >
-              Contact
-            </li>
-          </a>
-        </ul>
-      </header>
+            Contact me
+          </button>
+          <form action={CV} method="get" target="_blank" id="download-cv-form">
+            <button className="button a-buttons download-cv-button">
+              Download CV
+            </button>
+          </form>
+        </div>
+      </section>
       <AnimatePresence>
         {isContactOpen && (
           <>
@@ -110,8 +105,8 @@ const Header = () => {
           </>
         )}
       </AnimatePresence>
-    </>
+    </div>
   )
 }
 
-export default Header
+export default About

@@ -1,0 +1,580 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap);
+
+#root {
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.hero-image-container {
+  overflow-x: hidden;
+}
+
+svg {
+  margin-top: -7%;
+  margin-right: -2%;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+ul {
+  font-size: 28px;
+  font-weight: 600;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+  -ms-flex-pack: right;
+  justify-content: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin-top: 30px;
+  margin-right: 4.5vw;
+}
+
+a {
+  text-decoration: none;
+  margin-left: 6%;
+}
+
+li {
+  color: black;
+  text-decoration: none;
+  -webkit-transition: all ease-out 0.4s;
+  -o-transition: all ease-out 0.4s;
+  transition: all ease-out 0.4s;
+  border-bottom: 2px solid transparent;
+}
+
+li:hover {
+  border-color: #497ae3;
+}
+
+h1 {
+  text-align: center;
+}
+
+.section {
+  padding-top: 10vh;
+}
+
+#projects {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 10px;
+}
+
+hr {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 10vh;
+}
+
+#about-hr {
+  border: none;
+  height: 1px;
+  background-color: white;
+  margin-bottom: 7vh;
+}
+
+.projects-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+}
+
+.project-container {
+  max-width: 250px;
+  min-width: 250px;
+  height: 250px;
+  background-color: #bfbfbf;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-radius: 10px;
+  margin: 60px;
+}
+
+.project-title {
+  padding: 20px;
+  text-shadow: none;
+}
+
+.button {
+  color: white;
+  background-color: #497ae3;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: larger;
+  width: 60%;
+  min-height: 7vh;
+}
+
+.learn-more-button {
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.about-section {
+  background-color: #bfbfbf;
+}
+
+#about {
+  color: white;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 10px;
+}
+
+.about-container {
+  margin: 0 auto;
+  width: 500px;
+  max-width: 80vw;
+}
+
+#download-cv-form {
+  width: 47%;
+  padding: 0;
+}
+
+.download-cv-button {
+  width: 100%;
+}
+
+p {
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  background-color: white;
+  padding: 40px;
+  margin-bottom: 20px;
+  line-height: 25px;
+}
+
+#about-buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  row-gap: 10px;
+  padding: 20px;
+  /*for smaller screen sizes padding: 20px 0;*/
+}
+
+.about-buttons {
+  width: 47%;
+}
+
+/* project modal styles */
+
+body.active-modal {
+  overflow: hidden;
+}
+
+.modal,
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+
+.modal {
+  z-index: 4;
+}
+
+.overlay {
+  background: rgba(49, 49, 49, 0.8);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  width: 90vw;
+  max-width: 95vw;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.gif-container {
+  width: 70%;
+}
+
+.right-side-container {
+  width: 30%;
+  padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+video {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: fill;
+  object-fit: fill;
+}
+
+.modal-button {
+  width: 100%;
+  margin: 8px 0;
+}
+
+.project-buttons {
+  padding: 0;
+}
+
+.a-buttons {
+  color: white;
+  text-decoration: none;
+}
+
+.description-p {
+  text-shadow: none;
+  line-height: 20px;
+}
+
+.description-title {
+  text-align: left;
+  margin-bottom: 10px;
+  color: #497ae3;
+}
+
+.github-button {
+  background-color: black;
+}
+
+.close-modal-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+
+.close-modal-icon:hover {
+  cursor: pointer;
+}
+
+/* contact modal */
+
+.modal-content-contact {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  height: 95vh;
+  width: 50vw;
+}
+
+.form-container {
+  height: 95vh;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0 20%;
+  max-height: 80%;
+}
+
+textarea {
+  height: 40vh;
+  min-height: 5vh;
+  resize: vertical;
+  background-color: #bfbfbf;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+  margin-bottom: 10%;
+  color: white;
+  font-size: large;
+}
+
+input {
+  min-height: 5vh;
+  border: none;
+  border-radius: 10px;
+  background-color: #bfbfbf;
+  margin-bottom: 20px;
+  padding: 5px;
+  color: white;
+  font-size: larger;
+}
+
+input:focus,
+textarea:focus {
+  border: none;
+  border-radius: 2pt;
+  -webkit-box-shadow: 0 0 2pt 1pt black;
+  box-shadow: 0 0 2pt 1pt black;
+  outline: none;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+.send-button {
+  width: 100%;
+}
+
+.h1-contact {
+  margin: 20px 0;
+  font-size: 3vw;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: rgb(255, 255, 255);
+  -webkit-transition: background-color 5000s ease-in-out 1s;
+  transition: background-color 5000s ease-in-out 1s;
+}
+
+/*dont show video for screens under 1085px*/
+@media only screen and (max-width: 1085px) {
+  body {
+    font-size: 0.9em;
+  }
+
+  @supports (overflow-x: clip) {
+    .hero-image-container {
+      overflow-x: clip;
+    }
+  }
+  @supports not (overflow-x: clip) {
+    .hero-image-container {
+      clip: auto;
+      overflow-x: initial;
+    }
+  }
+
+  a {
+    margin-left: 0;
+  }
+
+  .gif-container {
+    display: none;
+  }
+
+  .modal-content {
+    min-height: 80vh;
+  }
+}
+
+/*project modal in range 550-1085px*/
+@media only screen and (max-width: 1085px) and (min-width: 550px) {
+  .modal-content {
+    height: 80vh;
+    max-width: 500px;
+  }
+
+  .right-side-container {
+    width: 100%;
+    gap: 40px;
+  }
+}
+
+/*project modal under 550px*/
+@media only screen and (max-width: 550px) {
+  .right-side-container {
+    width: 100%;
+    gap: 20px;
+  }
+}
+
+/*contact form width under 800px*/
+@media only screen and (max-width: 800px) {
+  .modal-content-contact {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .h1-contact {
+    font-size: 25px;
+  }
+}
+
+/*hero-image scale in range 900-600px*/
+@media only screen and (max-width: 900px) and (min-width: 600px) {
+  .hero-image-container {
+    margin-bottom: 20vh;
+  }
+
+  svg {
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5); /* Safari & Chrome */
+    -moz-transform: scale(1.5); /* Firefox */
+    -ms-transform: scale(1.5); /* Internet Explorer */
+    -o-transform: scale(1.5); /* Opera */
+  }
+}
+
+/*hero-image scale in range 600-400px*/
+@media only screen and (max-width: 600px) and (min-width: 400px) {
+  .hero-image-container {
+    margin-bottom: 25vh;
+  }
+
+  svg {
+    transform: scale(2);
+    -webkit-transform: scale(2); /* Safari & Chrome */
+    -moz-transform: scale(2); /* Firefox */
+    -ms-transform: scale(2); /* Internet Explorer */
+    -o-transform: scale(2); /* Opera */
+    margin-top: 0;
+  }
+}
+
+/*hero-image scale in range 400-320px*/
+@media only screen and (max-width: 400px) {
+  .hero-image-container {
+    margin-bottom: 25vh;
+  }
+
+  svg {
+    transform: scale(2.5);
+    -webkit-transform: scale(2.5); /* Safari & Chrome */
+    -moz-transform: scale(2.5); /* Firefox */
+    -ms-transform: scale(2.5); /* Internet Explorer */
+    -o-transform: scale(2.5); /* Opera */
+    margin-top: 30px;
+  }
+}
+
+/*responsive hamburger menu*/
+@media only screen and (max-width: 1085px) {
+  #hamburger-menu {
+    display: initial;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-right: 20px;
+    z-index: 2;
+    font-size: 7vh;
+    color: black;
+  }
+
+  #header {
+    z-index: 1;
+    background-color: #497ae3;
+    position: fixed;
+    display: none;
+  }
+
+  ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 0;
+    margin-top: calc(8vh + 10px);
+  }
+
+  li {
+    border-bottom: none;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  @-moz-document url-prefix() {
+    /*fixes the bug that the project nav link is bigger*/
+
+    ul {
+      display: block;
+    }
+  }
+
+  li:hover {
+    border-color: white;
+  }
+
+  .hamburger-menu-border {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+  }
+
+  .hamburger-menu-border-bottom {
+    border-bottom: none;
+  }
+}
