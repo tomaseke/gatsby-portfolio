@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const Header = () => {
@@ -6,12 +6,13 @@ const Header = () => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false)
   let hamburgerColor, headerDisplay
 
-  if (isContactOpen) {
+  if (isContactOpen && typeof document !== "undefined") {
     document.body.classList.add("active-modal")
     // document.getElementById("hamburger-menu").style.display = "none";
   }
   if (
-    !isContactOpen
+    !isContactOpen &&
+    typeof document !== "undefined"
     // document.getElementById("hamburger-menu") &&
     // window.innerWidth < 1085
   ) {
@@ -20,11 +21,19 @@ const Header = () => {
     // REFACTOR THIS WITH REF
   }
 
-  if (isHamburgerOpen && window.innerWidth <= 1085) {
+  if (
+    isHamburgerOpen &&
+    typeof document !== "undefined" &&
+    window.innerWidth <= 1085
+  ) {
     hamburgerColor = { color: "white" }
     headerDisplay = { display: "initial" }
   }
-  if (!isHamburgerOpen && window.innerWidth <= 1085) {
+  if (
+    !isHamburgerOpen &&
+    typeof document !== "undefined" &&
+    window.innerWidth <= 1085
+  ) {
     hamburgerColor = { color: "black" }
     headerDisplay = { display: "none" }
   }

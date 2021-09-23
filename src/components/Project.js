@@ -7,16 +7,17 @@ const Project = ({
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  if (isModalOpen) {
+  if (typeof document !== "undefined" && isModalOpen) {
     document.body.classList.add("active-modal")
     document.getElementById("hamburger-menu").style.display = "none"
   }
 
-  if (!isModalOpen) {
+  if (typeof document !== "undefined" && !isModalOpen) {
     document.body.classList.remove("active-modal")
   }
 
   if (
+    typeof document !== "undefined" &&
     !isModalOpen &&
     document.getElementById("hamburger-menu") &&
     window.innerWidth <= 1085

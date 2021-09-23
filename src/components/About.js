@@ -5,11 +5,12 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const About = () => {
   const [isContactOpen, setIsContactOpen] = useState(false)
-  if (isContactOpen) {
+  if (typeof document !== "undefined" && isContactOpen) {
     document.body.classList.add("active-modal")
     // document.getElementById("hamburger-menu").style.display = "none";
   }
   if (
+    typeof document !== "undefined" &&
     !isContactOpen
     // document.getElementById("hamburger-menu") &&
     // window.innerWidth < 1085
