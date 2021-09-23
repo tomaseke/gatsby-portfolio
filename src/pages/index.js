@@ -1,7 +1,7 @@
 import React from "react"
 import "../components/App.css"
 import HeroImage from "../components/HeroImage"
-import Header from "../components/Header"
+import Header from "src/components/Header.js"
 import Project from "../components/Project"
 import About from "../components/About"
 import projects from "../components/projects.js"
