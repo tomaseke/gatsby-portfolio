@@ -1,6 +1,6 @@
 import React from "react"
 import hero_image from "../images/hero-image-3.jpg"
-import CV from "../../public/CV.pdf"
+import CV from "./CV.pdf"
 
 const HeroImage = () => {
   return (

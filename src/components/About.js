@@ -1,6 +1,6 @@
 import React from "react"
 import { useState } from "react"
-import CV from "../../public/CV.pdf"
+import CV from "./CV.pdf"
 import { motion, AnimatePresence } from "framer-motion"
 
 const About = () => {
