@@ -1,9 +1,9 @@
-import guessingGame from "../images/Number-guessing-game.webm"
-import calculator from "../images/Calculator.webm"
-import scans from "../images/3D-scans.webm"
-import movieGenerator from "../images/Random-movie-generator.webm"
-import reactionTest from "../images/Reaction-test.webm"
-import ticTacToe from "../images/Tic-tac-toe.webm"
+import guessingGame from "../images/Number-guessing-game.mp4"
+import calculator from "../images/Calculator.mp4"
+import scans from "../images/3D-scans.mp4"
+import movieGenerator from "../images/Random-movie-generator.mp4"
+import reactionTest from "../images/Reaction-test.mp4"
+import ticTacToe from "../images/Tic-tac-toe.mp4"
 
 const projects = [
   {

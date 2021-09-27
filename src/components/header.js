@@ -103,7 +103,7 @@ const Header = () => {
                     <input
                       type="hidden"
                       name="_next"
-                      value="https://tomaseke.github.io/Portfolio/"
+                      value="https://tomaserben.eu/"
                     />
                     <button className="button send-button">SEND</button>
                   </form>

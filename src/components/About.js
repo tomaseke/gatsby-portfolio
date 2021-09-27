@@ -31,15 +31,16 @@ const About = () => {
             understanding of HTML, CSS and Javascript and I love learning new
             tools and technologies that improve my efficiency as a developer (as
             one of my favorite quote says "To a man with hammer, everything
-            looks like a nail."). At the time of writing, I am improving my
-            knowledge of React and a little bit of Node and Express to better
-            understand the frontend-backend dynamic. I am also on my ongoing
-            quest to write short yet readable code.
+            looks like a nail."). I use git/github for version control. At the
+            time of writing, I am improving my knowledge of React and a little
+            bit of Node and Express to better understand the frontend-backend
+            dynamic.
             <br />
-            <br />I believe in effective communication, honesty and
-            adaptability. I love to brainstorm possible ideas with others,
-            however I can also crack problems on my own. I like to travel, play
-            any kind of sport and create new things.
+            <br /> I am on my ongoing quest to write short, yet readable code. I
+            believe in effective communication, honesty and adaptability. I love
+            to brainstorm possible ideas with others, however I can also crack
+            problems on my own. I like to travel, play any kind of sport and
+            create new things.
           </p>
         </div>
         <div id="about-buttons-container">
@@ -59,17 +60,17 @@ const About = () => {
       <AnimatePresence>
         {isContactOpen && (
           <>
-            <motion.div
-              className="modal"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1, transition: { duration: 0.3 } }}
-              exit={{ opacity: 0 }}
-            >
+            <motion.div className="modal">
               <div
                 className="overlay"
                 onClick={() => setIsContactOpen(!isContactOpen)}
               ></div>
-              <div className="modal-content-contact">
+              <motion.div
+                className="modal-content-contact"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: { duration: 0.3 } }}
+                exit={{ opacity: 0 }}
+              >
                 <div className="form-container">
                   <h1 className="h1-contact">Contact Form</h1>
                   <form
@@ -90,7 +91,7 @@ const About = () => {
                     <input
                       type="hidden"
                       name="_next"
-                      value="https://tomaseke.github.io/Portfolio/"
+                      value="https://tomaserben.eu/"
                     />
                     <button className="button send-button">SEND</button>
                   </form>
@@ -101,7 +102,7 @@ const About = () => {
                 >
                   &#10006;
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           </>
         )}
